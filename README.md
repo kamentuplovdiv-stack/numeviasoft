@@ -49,3 +49,8 @@ Run `node tests/lab-math.test.cjs` to check the educational calculations. The Pa
 
 ### GitHub export verification (2026-11-04)
 The 3 HTML pages and 84 local asset/navigation/fragment references resolve inside `/numeviasoft/`. JavaScript syntax checks and the existing numerical tests pass. In the local browser preview at the project subpath, the homepage → product directory → EngineerOne live-demo path works, logo and illustrations load, and the DC example shows 40 mA with 100 Ω + 200 Ω at 12 V. No application console errors were observed; browser-extension telemetry errors were excluded. This is local preview verification, not a live GitHub Pages deployment.
+
+
+### Contacts and icon family — 2026-11-04
+Published contact details supplied by the owner: Plovdiv, Skopie 98 (visitors), +359888010266, kamentuplovdiv@gmail.com. The form prepares a mailto draft; the visitor sends it in their own email client. No backend delivery or automatic success claim.
+30 original line icons are in `visuals/icons/`. A new EngineerOne icon and downloadable Google Play PNG/ZIP are in `brand-assets/`. The Android app/Play Console have not been modified.

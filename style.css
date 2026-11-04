@@ -11,3 +11,16 @@
 .engineerone-app-icon{display:block;width:88px;height:88px;object-fit:contain;border-radius:22px;margin-bottom:20px;box-shadow:0 8px 24px #123b321a}@media(max-width:600px){.engineerone-app-icon{width:72px;height:72px;border-radius:18px}}
 
 .service-list{border-top:1px solid #b8c8bf}.service-item{border-bottom:1px solid #b8c8bf}.service-item summary{display:flex;align-items:center;gap:24px;padding:25px 0;cursor:pointer;font-size:24px;font-weight:600;list-style:none}.service-item summary::-webkit-details-marker{display:none}.service-number{font-size:13px;color:#4c685c;font-weight:400}.service-item summary small{display:block;font-size:15px;font-weight:400;margin-top:6px}.service-plus{margin-left:auto}.service-item[open] .service-plus{transform:rotate(45deg)}.service-body{padding:0 48px 28px;max-width:850px}.service-note{max-width:780px;font-size:14px;color:#506559;margin-top:24px}.service-item summary:focus-visible{outline:3px solid #a65322;outline-offset:4px}@media(max-width:600px){.service-item summary{font-size:20px;gap:14px}.service-body{padding:0 0 24px}.service-item summary small{font-size:14px}}
+
+.contact-details,.footer-contacts{display:flex;flex-direction:column;gap:12px;font-style:normal;overflow-wrap:anywhere}.contact-details{margin-top:28px}.contact-details a{width:fit-content}.contact-details small{max-width:380px}.footer-contacts{font-size:14px;line-height:1.5}.contact-details a:hover,.footer-contacts a:hover{text-decoration:underline}#email-draft{display:inline-flex;margin:14px 12px 14px 0}
+
+/* Numevia line icon family: consistent geometry, visible text labels. */
+.ui-icon{display:inline-block;width:22px;height:22px;flex:0 0 22px;vertical-align:middle;object-fit:contain}
+.service-symbol{display:flex;align-items:center;justify-content:center;width:52px;height:52px;flex:0 0 52px;background:#e9efe7;border:1px solid #d6e0d2;border-radius:14px}
+.service-symbol .ui-icon{width:28px;height:28px;flex-basis:28px}.service-item summary>span:nth-child(2){min-width:0}
+.module-icon{display:flex;align-items:center;justify-content:center}.module-icon img{width:28px;height:28px;display:block}
+.contact-details a,.footer-contacts a,.contact-line{display:flex;align-items:center;gap:10px;min-height:32px}.contact-details a span,.footer-contacts a span,.contact-line>span{min-width:0;overflow-wrap:anywhere}
+.process h3{display:flex;align-items:center;gap:10px}.product-tags li{display:inline-flex;align-items:center;gap:6px}.product-tags .ui-icon{width:16px;height:16px;flex-basis:16px}
+footer{flex-wrap:wrap}.footer-contacts{min-width:0}.footer-contacts a{min-height:36px}footer address a,footer address a:last-child{display:flex}
+@media(max-width:600px){.service-symbol{width:44px;height:44px;flex-basis:44px;border-radius:12px}.service-symbol .ui-icon{width:24px;height:24px}.service-item summary{gap:12px}.service-item summary>span:nth-child(2){flex:1}.service-item summary small{line-height:1.5}.footer-contacts{width:100%}.contact-details a,.footer-contacts a{min-height:44px}}
+@media(max-width:360px){.contact-details a[href^="mailto:"],.footer-contacts a[href^="mailto:"]{font-size:14px}}
