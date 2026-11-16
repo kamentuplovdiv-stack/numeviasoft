@@ -35,29 +35,29 @@
   <div class="panel">
     <ul>
       <li><strong>Инженерни данни:</strong> въведени формули, конструкции, числени стойности, проекти и настройки. Те се съхраняват локално в паметта на приложението на устройството.</li>
-      <li><strong>Снимки на задачи:</strong> достъпни са само при изрично избиране на камера или файл чрез системните инструменти на Android. Вграденото разпознаване на текст чрез Google ML Kit обработва избраното изображение на устройството.</li>
-      <li><strong>Разпознат текст:</strong> извлеченият резултат се показва локално в приложението, за да го прегледате и използвате при изчисления.</li>
-      <li><strong>Технически данни на SDK:</strong> ML Kit описва обработка на тип устройство и операционна система, информация за приложението, показатели за изпълнение, събития, грешки, характеристики на обработката и идентификатори на инсталацията за диагностика и анализ на използването.</li>
+      <li><strong>Снимки на задачи:</strong> достъпни са само при изрично избиране на камера или файл чрез системните инструменти на Android. При изричен избор потребителят споделя снимката с инсталираното приложение ChatGPT или Claude чрез системното Android меню за споделяне. EngineerOne не извършва OCR и не изпраща задачите самостоятелно до AI сървър.</li>
+      <li><strong>Написана задача:</strong> въведеният текст се предоставя само на избраното външно приложение след изрично действие. Отговорът се появява в ChatGPT или Claude, а не автоматично обратно в EngineerOne.</li>
+      <li><strong>Временни копия на изображения:</strong> за споделяне от галерията приложението копира избраното изображение в собствен временен кеш (максимум 16 MB) и предоставя само временен достъп на приложението-получател.</li>
       <li><strong>Имейл запитвания:</strong> ако ни пишете доброволно, използваме предоставените контактни данни и съдържанието на писмото за отговор на запитването.</li>
     </ul>
   </div>
-  <p>При разгледаната версия не е установена собствена облачна синхронизация на проекти, регистрация на потребители, рекламен SDK или онлайн AI услуга. Тази констатация трябва да се прегледа отново при всяка функционална промяна.</p>
+  <p>При разгледаната версия не е установена собствена облачна синхронизация на проекти, регистрация на потребители, рекламен SDK или собствен AI сървър. Чатботът се използва през отделното приложение на избрания доставчик. Тази констатация трябва да се прегледа отново при всяка функционална промяна.</p>
 
-  <h2>3. Защо и с кого се обработват техническите данни?</h2>
-  <p>Инженерните данни се използват за функциите, които избирате. Вградената библиотека <strong>Google ML Kit Text Recognition</strong> използва технически показатели за диагностика, производителност и анализ на използването. Google посочва, че събраните от този SDK показатели се защитават с HTTPS при предаване и не се предават от ML Kit на допълнителни трети лица. Това не означава, че изображенията и числените проекти се изпращат за разпознаване до Google.</p>
-  <p>Повече информация: <a href="https://developers.google.com/ml-kit/android-data-disclosure" rel="noopener noreferrer">Официална декларация за данните на ML Kit</a>.</p>
-  <p><strong>За потвърждение:</strong> приложимото правно основание и ролите на участниците за техническите потоци на SDK трябва да бъдат окончателно проверени преди публикуване.</p>
+  <h2>3. Споделяне с ChatGPT и Claude</h2>
+  <p>EngineerOne не изпраща изображения и текст до собствен AI сървър. При натискане на „Отвори в ChatGPT“ или „Отвори в Claude“ Android предоставя избраната снимка или въведения текст на съответното инсталирано външно приложение. То може да използва интернет според своите правила и условия. Потребителят трябва да провери действителното прикачване и изпращане в избрания AI интерфейс.</p>
+  <p>Съдържанието, изпратено в ChatGPT или Claude, се обработва съобразно политиките на <a href="https://openai.com/policies/privacy-policy/">OpenAI</a> или <a href="https://www.anthropic.com/legal/privacy">Anthropic</a>. EngineerOne няма автоматичен достъп до историята на разговорите или отговорите, съхранявани в тези услуги.</p>
+  <p><strong>За окончателна проверка:</strong> приложимото основание за обработване, ролите на участниците и Google Play Data Safety декларациите трябва да бъдат проверени спрямо реалния release и настройките на приложенията-получатели.</p>
 
   <h2>4. Съхранение, изтриване и експортиране</h2>
   <ul>
     <li>Проектите и настройките остават на устройството, докато бъдат премахнати чрез наличните функции, изчистване на данните на приложението или деинсталиране. Експортираните файлове остават там, където ги запазите.</li>
-    <li>Снимките, създадени чрез камерата, се използват като временни файлове и обичайно се изтриват след приключване на сканирането. При прекъсване могат да останат в кеша и да бъдат изчистени при по-късно използване на функцията или от системата.</li>
-    <li>За техническите данни, обработвани от Google ML Kit, важат съответните правила и срокове на доставчика. Не твърдим, че можем да изтрием отдалечено данни, до които нямаме достъп.</li>
+    <li>Снимките, създадени чрез камерата, и копията от галерията се използват като временни файлове за споделяне. EngineerOne чисти файловете, по-стари от 3 дни, при следващо избиране на изображение; Android може да изчисти кеша по-рано. Поради това копия могат да останат известно време след споделяне.</li>
+    <li>За данните, изпратени от потребителя чрез ChatGPT или Claude, важат условията и сроковете за съхранение на избраната услуга. EngineerOne не може самостоятелно да изтрива разговори или изображения, съхранявани там.</li>
     <li>Имейл кореспонденцията се пази само за нуждите на запитването и необходимите последващи отношения; действителните срокове и правно основание трябва да бъдат потвърдени от издателя.</li>
   </ul>
 
   <h2>5. Разрешения и сигурност</h2>
-  <p>При проверената версия за избор на снимка се използва системният Android интерфейс, без общо разрешение за разглеждане на снимки и файлове. Локалният WebView блокира външните мрежови ресурси и не допуска свободен файлов достъп. Това описание не е гаранция, че нито една външна библиотека не обработва технически данни. За останалите потоци сигурността и съответните декларации подлежат на проверка при издаването.</p>
+  <p>При проверената версия за избор на снимка се използва системният Android интерфейс, без общо разрешение за разглеждане на снимки и файлове. Локалният WebView блокира външните мрежови ресурси и не допуска свободен файлов достъп. За временно споделяните изображения се използва защитен Android FileProvider и ограничено разрешение за четене. Външното приложение има собствена мрежова свързаност. Сигурността и декларациите се проверяват при окончателното издаване.</p>
 
   <h2>6. Вашите права и контакт</h2>
   <p>Когато се прилага Общият регламент относно защитата на данните (GDPR), имате права като достъп, корекция, изтриване, ограничаване на обработването, възражение и жалба до компетентния надзорен орган. За въпроси и искания: <a href="mailto:kamentuplovdiv@gmail.com">kamentuplovdiv@gmail.com</a>. За данните, които са само на вашето устройство, издателят по правило няма пряк достъп до тях; можете да ги управлявате локално.</p>
@@ -68,7 +68,7 @@
   <details lang="en">
     <summary>English information / Информация на английски</summary>
     <h2>Privacy information for EngineerOne</h2>
-    <p>This page is a <strong>draft</strong> and is not the final Play Store privacy policy. The app is developed under the Numevia Studio name by Kamen Paunov. Privacy inquiries: <a href="mailto:kamentuplovdiv@gmail.com">kamentuplovdiv@gmail.com</a>. Calculations, projects and settings are stored locally. Images selected through Android system tools are processed on-device using bundled Google ML Kit text recognition. Temporary camera images are normally removed after processing. Google ML Kit documents technical device/app information, performance and usage metrics, error events and per-installation identifiers used for diagnostics and analytics. See the <a href="https://developers.google.com/ml-kit/android-data-disclosure">Google disclosure</a>. Exported files remain under the user's control. Applicable user rights and deletion inquiries can be addressed to the contact above. This page must be reviewed for accuracy before release.</p>
+    <p>This page is a <strong>draft</strong>, not the final Play Store privacy policy. EngineerOne is developed under the Numevia Studio name by Kamen Paunov. Contact: <a href="mailto:kamentuplovdiv@gmail.com">kamentuplovdiv@gmail.com</a>. Engineering calculations, projects and settings remain local. The user can photograph or select an image or type a problem and, only after an explicit choice, hand the content to the installed ChatGPT or Claude application. EngineerOne does not use bundled OCR or an AI API backend. The external app may connect to the online AI service and governs its own data processing under the <a href="https://openai.com/policies/privacy-policy/">OpenAI</a> or <a href="https://www.anthropic.com/legal/privacy">Anthropic</a> policy. Photo copies remain in a private cache, with files older than three days removed on the next image-selection operation; Android may clear cache earlier. The recipient opens separately; answers do not return automatically to EngineerOne. Privacy disclosures, legal basis, owner identity and contact need confirmation before release.</p>
   </details>
   <footer><p class="meta">Приложение: EngineerOne · Проект: Numevia Studio · <a href="/numeviasoft/index.html">Начална страница</a></p></footer>
 </main>
