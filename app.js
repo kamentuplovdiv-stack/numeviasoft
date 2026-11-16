@@ -1,8 +1,85 @@
-const $=id=>document.getElementById(id);
-document.querySelectorAll('[data-plan]').forEach(b=>b.addEventListener('click',()=>{const el=$('plan-detail');el.hidden=false;el.textContent=`Избран вариант: ${b.dataset.plan}. Това е планиран модел от курсовия проект. Платените варианти са за премахване на реклами в едно и също приложение. Покупки и плащания през този сайт не се извършват.`}));$('brief')?.addEventListener('submit',e=>{e.preventDefault();if(!$('message').value.trim()||$('message').value.trim().length<10){$('message').setCustomValidity('Опиши идеята с поне 10 знака.');$('message').reportValidity();return}$('prepared').value='До Numevia\nТема: '+$('topic').value+'\n\n'+$('message').value.trim();$('email-draft').href='mailto:kamentuplovdiv@gmail.com?subject='+encodeURIComponent('Numevia — '+$('topic').value)+'&body='+encodeURIComponent($('prepared').value);$('brief-result').hidden=false;$('copy-status').textContent='Текстът е подготвен. Не е изпратен.'});$('message')?.addEventListener('input',()=>$('message').setCustomValidity(''));$('copy')?.addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('prepared').value);$('copy-status').textContent='Текстът е копиран.'}catch{$('prepared').focus();$('prepared').select();$('copy-status').textContent='Маркирахме текста. Копирай го от менюто на устройството.'}});
+(() => {
+  'use strict';
+  const byId = id => document.getElementById(id);
+  const menu = document.querySelector('.menu');
+  const nav = byId('navigation');
 
-const menuToggle=document.querySelector('.menu-toggle'), navigation=document.getElementById('navigation');function closeMenu(){menuToggle.setAttribute('aria-expanded','false');navigation.classList.remove('open')}menuToggle.addEventListener('click',()=>{const open=menuToggle.getAttribute('aria-expanded')!=='true';menuToggle.setAttribute('aria-expanded',String(open));navigation.classList.toggle('open',open)});navigation.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menuToggle.getAttribute('aria-expanded')==='true'){closeMenu();menuToggle.focus()}});document.addEventListener('click',e=>{if(!e.target.closest('header'))closeMenu()});if(location.pathname.includes('engineerone')){document.querySelector('[data-page="engineerone"]').setAttribute('aria-current','page')}else if(location.pathname.includes('products')){document.querySelector('[data-page="products"]').setAttribute('aria-current','page')}else if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){navigation.querySelectorAll('[data-section]').forEach(a=>{if(a.dataset.section===e.target.id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}})},{rootMargin:'-10% 0px -55% 0px'});document.querySelectorAll('section[id]').forEach(s=>observer.observe(s))}
+  function setMenu(open) {
+    menu.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('open', open);
+  }
+  menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
+  nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('click', e => { if (!e.target.closest('.head')) setMenu(false); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
+      setMenu(false);
+      menu.focus();
+    }
+  });
+  matchMedia('(max-width:660px)').addEventListener('change', () => setMenu(false));
+  if (document.body.dataset.page === 'index') {
+    function markSection() {
+      const section = location.hash.slice(1);
+      nav.querySelectorAll('a').forEach(a => {
+        const matches = a.hash === location.hash && a.hash !== '' || (a.dataset.nav === 'products' && section === 'product');
+        if (matches) a.setAttribute('aria-current', 'location');
+        else a.removeAttribute('aria-current');
+      });
+    }
+    markSection();
+    window.addEventListener('hashchange', markSection);
+  }
 
-document.querySelectorAll('.service-select').forEach(button=>button.addEventListener('click',()=>{const topic=$('topic'),message=$('message');topic.value=button.dataset.service;if(!message.value.trim())message.value=button.dataset.prompt+'\n\nОписание на задачата: ';message.setCustomValidity('');$('brief-result').hidden=true;location.hash='contact';message.focus({preventScroll:true});}));
-
-['message','topic'].forEach(id=>$(id)?.addEventListener('input',()=>{$('brief-result').hidden=true;$('copy-status').textContent=''}));
+  const form = byId('brief');
+  if (!form) return;
+  const topic = byId('topic');
+  const message = byId('message');
+  const draft = byId('brief-result');
+  const prepared = byId('prepared');
+  const error = byId('brief-error');
+  const status = byId('copy-status');
+  const send = byId('send-mail');
+  const recipient = 'kamentuplovdiv@gmail.com';
+  function resetDraft() {
+    draft.hidden = true;
+    prepared.value = '';
+    send.href = 'mailto:' + recipient;
+    status.textContent = '';
+    error.hidden = true;
+    message.removeAttribute('aria-invalid');
+  }
+  form.noValidate = true;
+  form.addEventListener('input', resetDraft);
+  document.querySelectorAll('[data-topic]').forEach(link => link.addEventListener('click', () => {
+    topic.value = link.dataset.topic;
+    resetDraft();
+  }));
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const body = message.value.trim();
+    if (body.length < 10) {
+      draft.hidden = true;
+      error.textContent = 'Опиши задачата с поне 10 знака.';
+      error.hidden = false;
+      message.setAttribute('aria-invalid','true');
+      message.focus();
+      return;
+    }
+    const subject = 'Numevia — ' + topic.selectedOptions[0].text;
+    prepared.value = 'До: ' + recipient + '\nТема: ' + subject + '\n\n' + body;
+    send.href = 'mailto:' + recipient + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    draft.hidden = false;
+    byId('draft-title').focus();
+  });
+  byId('copy').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(prepared.value);
+      status.textContent = 'Текстът е копиран.';
+    } catch {
+      prepared.focus();
+      prepared.select();
+      status.textContent = 'Текстът е маркиран. Избери „Копирай“ от менюто на устройството.';
+    }
+  });
+})();

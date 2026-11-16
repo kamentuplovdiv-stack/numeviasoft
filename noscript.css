@@ -1,0 +1,6 @@
+.menu,#brief,.catalog-toolbar,.lab-panel,.lab-choices,.lab-heading>p { display: none; }
+@media(max-width:660px) {
+  .head-inner { flex-wrap: wrap; }
+  .head-inner nav { display: flex; position: static; flex-wrap: wrap; flex-basis: 100%; padding: 0 0 6px; gap: 0 15px; border: 0; box-shadow: none; }
+  .head-inner nav a { border: 0; }
+}

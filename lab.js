@@ -8,7 +8,7 @@ const titles={robot:'Планарен робот с две звена',beam:'Г�
 const modes={robot:['2R / KINEMATICS','mm · идеален планарен модел','Плъзни оранжевата цел. Можеш да зададеш X/Y или ъглите на ставите. Със стрелките местиш избраната цел с 5 mm.'],beam:['BEAM / STRUCTURAL ANALYSIS','Чертеж и диаграми с отделни мащаби','Плъзни оранжевата стрелка по гредата. Докосни диаграмата, за да провериш стойността в избран разрез.'],circuit:['CIRCUIT / DC ANALYSIS','Идеални резистори · установен режим','Докосни R₁ или R₂ в схемата, за да избереш кой елемент да редактираш.'],fit:['FITS / LIMIT DIMENSIONS','Гранични отклонения в µm','Промени полетата на отвора и вала. Видът на сглобката се определя от най-малката и най-голямата хлабина.']};
 const format=(n,d=2)=>new Intl.NumberFormat('bg-BG',Math.abs(n)>0&&Math.abs(n)<.001?{notation:'scientific',maximumSignificantDigits:4}:{maximumFractionDigits:d}).format(Math.abs(n)<1e-12?0:n);
 const f=n=>Number.isFinite(n)?Math.round(n*10000)/10000:'';
-function field(key,label,unit,min,max,step=1,slider=true){const value=state[current][key];return `<div class="lab-field"><div class="${slider?'range-top':''}"><label for="field-${key}">${label}<span>${unit}</span></label><input id="field-${key}" data-key="${key}" type="text" inputmode="decimal" value="${f(value)}" autocomplete="off" aria-describedby="lab-error" data-min="${min}" data-max="${max}"></div>${slider?`<input type="range" aria-label="${label} — плъзгач" data-range="${key}" min="${min}" max="${max}" step="${step}" value="${f(value)}">`:''}</div>`;}
+function field(key,label,unit,min,max,step=1,slider=true){const value=state[current][key];return `<div class="lab-field"><div class="${slider?'range-top':''}"><label for="field-${key}">${label} <span>${unit}</span></label><input id="field-${key}" data-key="${key}" type="text" inputmode="decimal" value="${f(value)}" autocomplete="off" aria-describedby="lab-error" data-min="${min}" data-max="${max}"></div>${slider?`<input type="range" aria-label="${label} — плъзгач" data-range="${key}" min="${min}" max="${max}" step="${step}" value="${f(value)}">`:''}</div>`;}
 function segmented(name,items,selected){return `<div class="lab-segment" role="group" aria-label="${name}">${items.map(([value,label])=>`<button type="button" data-action="${value}" aria-pressed="${value===selected}" class="${value===selected?'active':''}">${label}</button>`).join('')}</div>`;}
 function setRobotTargetFromPose(){const s=state.robot,p=math.robotFK(s.l1,s.l2,s.q1,s.q2);s.x=p.x;s.y=p.y;}
 setRobotTargetFromPose();
@@ -68,5 +68,24 @@ canvas.addEventListener('keydown',e=>{const h=e.target.closest('[data-drag]'),ed
 $('lab-reset').addEventListener('click',()=>{stop();state[current]=JSON.parse(JSON.stringify(defaults[current]));if(current==='robot')setRobotTargetFromPose();controls();update();$('lab-feedback').textContent='Примерните стойности са възстановени.';});
 $('lab-copy').addEventListener('click',async()=>{if(!lastResult)return;const report='Numevia / EngineerOne — уеб демонстрация\n'+lastResult+'\nИдеализиран модел. Не е пълната Android версия.';try{await navigator.clipboard.writeText(report);$('lab-feedback').textContent='Резултатът е копиран.';}catch{const t=document.createElement('textarea');t.value=report;t.readOnly=true;t.setAttribute('aria-label','Резултат за ръчно копиране');t.style.cssText='width:100%;min-height:100px';$('lab-feedback').replaceChildren(t);t.focus();t.select();}});
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stop();});reduced.addEventListener?.('change',()=>{stop();});if('IntersectionObserver'in window){new IntersectionObserver(entries=>{if(!entries[0].isIntersecting)stop();},{threshold:0}).observe($('lab-panel'));}
-selectMode('robot');
+const query = new URLSearchParams(location.search);
+const initialModel = query.get('model');
+if (initialModel === 'robot') {
+  const xText = query.get('x')?.trim(), yText = query.get('y')?.trim();
+  const x = Number(xText), y = Number(yText);
+  if (xText && yText && Number.isFinite(x) && Number.isFinite(y)) {
+    const robot = state.robot;
+    const elbow = query.get('elbow') === '-1' ? -1 : 1;
+    const pose = math.robotIK(robot.l1, robot.l2, x, y, elbow);
+    if (pose.reachable) Object.assign(robot, { x, y, elbow, q1: pose.q1, q2: pose.q2 });
+  }
+}
+if (initialModel === 'beam' && query.has('position')) {
+  const value = query.get('position').trim();
+  const position = Number(value);
+  if (value && Number.isFinite(position) && position >= 5 && position <= 95) {
+    state.beam.position = position;
+  }
+}
+selectMode(Object.hasOwn(modes, initialModel) ? initialModel : 'robot');
 })();

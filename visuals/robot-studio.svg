@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 360" role="img" aria-label="Модел на двузвенен робот">
+<defs><pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0v24" fill="none" stroke="#bbd1bc" stroke-opacity=".17" stroke-width=".8"/></pattern><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0v7" stroke="#dce6cd" stroke-width="2"/></pattern></defs>
+<rect width="660" height="360" fill="#19392f"/><rect width="660" height="360" fill="url(#grid)"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M63 285H604M139 315V33m-5 10 5-10 5 10m450 237 10 5-10 5" stroke="#91ac9d" stroke-width="1.3"/>
+<path d="M441 285A302 302 0 0 0 305 34M501 285A362 362 0 0 0 353 0" stroke="#9ab49f" stroke-width="1.3" stroke-dasharray="4 7"/>
+<path d="M139 164h281v121" stroke="#eea26a" stroke-opacity=".8" stroke-dasharray="4 6"/>
+<path d="m110 283 29-37 29 37z" fill="#809c8c" stroke="#d5dfce" stroke-width="2"/><path d="M102 289h73v8h-73z" fill="url(#hatch)" stroke="#c9d5c4"/>
+<path d="m130 263 118-148q18-31 40-12 15 13 0 31L151 277q-12 13-22 2t1-16z" fill="#a3b4a2" stroke="#dce8d4" stroke-width="2.5"/><path d="m145 263 118-135" stroke="#4a6c5b" stroke-width="5"/>
+<path d="m272 103 149 48q15 6 11 17-5 14-19 10l-151-52q-15-4-12-16 4-12 22-7z" fill="#ed9156" stroke="#fed4a7" stroke-width="2.5"/><path d="m291 123 112 37" stroke="#824d33" stroke-width="3"/>
+<circle cx="139" cy="269" r="18" fill="#37564b" stroke="#c3d3bf" stroke-width="2.8"/><circle cx="139" cy="269" r="6" fill="#e3ead7"/><circle cx="267" cy="115" r="19" fill="#405c50" stroke="#dbe4d0" stroke-width="2.5"/><circle cx="267" cy="115" r="7" fill="#e6e9cf"/><circle cx="420" cy="164" r="12" fill="#334f43" stroke="#fcab6f" stroke-width="2"/><circle cx="420" cy="164" r="4" fill="#f7ca99"/>
+<path d="m431 154 31-41h53m-306 68-34-29h-42m147-52 20-39h45" stroke="#a8beab" stroke-width="1.2"/><path d="M193 285a54 54 0 0 0-17-38" stroke="#f5975b" stroke-width="1.7"/></g>
+<g fill="#d6e1d4" font-family="monospace" font-size="13"><text x="608" y="306">x</text><text x="117" y="37">y</text><text x="115" y="146">L₁</text><text x="348" y="65">L₂</text><text x="468" y="104" fill="#ffb785">P(x, y)</text><text x="197" y="260">θ₁</text></g></svg>
