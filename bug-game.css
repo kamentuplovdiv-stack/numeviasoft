@@ -1,0 +1,26 @@
+.studio-signature { display: flex; align-items: center; justify-self: start; }
+.bug-launch, .bug-target, .bug-close { display: grid; place-items: center; padding: 0; border: 0; background: transparent; color: var(--ink); }
+.bug-launch { position: relative; align-self: flex-start; width: 44px; height: 44px; margin-left: -2px; }
+.bug-launch img { transform: rotate(28deg); }
+.bug-launch span { pointer-events: none; position: absolute; left: 75%; top: 3px; white-space: nowrap; background: var(--forest); color: white; border-radius: 4px; padding: 5px 9px; font-size: .72rem; opacity: 0; }
+.bug-launch:focus-visible span { opacity: 1; }
+@media (hover:hover) { .bug-launch:hover span { opacity: 1; } }
+@media (prefers-reduced-motion:no-preference) {
+  .bug-launch img { animation: peek-out .8s ease-out both; }
+  @keyframes peek-out { from { opacity: 0; transform: translate(-9px,8px) rotate(4deg); } to { opacity: 1; transform: rotate(28deg); } }
+}
+
+.bug-game { width: min(460px,calc(100% - 24px)); max-height: calc(100dvh - 24px); padding: clamp(18px,4vw,30px); border: 1px solid var(--line); border-radius: 12px; color: var(--ink); background: var(--paper); box-shadow: 0 20px 90px #102a2144; }
+.bug-game::backdrop { background: #10281fe0; }
+.bug-heading, .bug-stats { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.bug-heading h2 { font-size: clamp(1.8rem,5vw,2.4rem); }
+.bug-close { flex: 0 0 44px; height: 44px; font: 400 1.7rem/1 var(--sans); border: 1px solid var(--line); border-radius: 50%; }
+.bug-close:hover { background: var(--tint); }
+#bug-help { color: var(--muted); font-size: .9rem; line-height: 1.5; margin: 8px 0 18px; }
+.bug-stats { font: .76rem/1.5 var(--mono); margin-bottom: 8px; }
+.bug-stats b { font-weight: 650; font-variant-numeric: tabular-nums; }
+.bug-arena { position: relative; height: clamp(150px,35dvh,270px); overflow: hidden; border-radius: 6px; border: 1px solid #9eac98; background: radial-gradient(#adbaaa 1px,transparent 1.2px) 0 0/16px 16px, #e7ecdf; }
+.bug-target { position: absolute; left: var(--bug-x,50%); top: var(--bug-y,50%); transform: translate(-50%,-50%); width: 56px; height: 56px; border-radius: 50%; touch-action: manipulation; }
+.bug-target img { pointer-events: none; transform: rotate(var(--bug-angle,18deg)); filter: drop-shadow(1px 2px 1px #24453936); }
+.bug-finish { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: 16px; background: #edf1e5ed; }
+#bug-result { font-size: 1.25rem; font-weight: 630; }

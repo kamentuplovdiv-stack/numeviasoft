@@ -2,47 +2,51 @@
 <html lang="bg">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Numevia — приложения и софтуер по задание</title><meta name="description" content="Софтуерното студио на Камен Паунов в Пловдив. Мобилни приложения и програми по задание за работни процеси, данни и отчети.">
+  <title>Numevia — софтуерна компания</title><meta name="description" content="Numevia е софтуерна компания в Пловдив. Разгледай собствените продукти или предложи идея за софтуер по поръчка.">
   <meta name="theme-color" content="#f8f7f2"><link rel="canonical" href="https://kamentuplovdiv-stack.github.io/numeviasoft/">
   <meta property="og:type" content="website"><meta property="og:locale" content="bg_BG">
-  <meta property="og:title" content="Numevia — приложения и софтуер по задание"><meta property="og:description" content="Софтуерното студио на Камен Паунов в Пловдив. Мобилни приложения и програми по задание за работни процеси, данни и отчети.">
+  <meta property="og:title" content="Numevia — софтуерна компания"><meta property="og:description" content="Numevia е софтуерна компания в Пловдив. Разгледай собствените продукти или предложи идея за софтуер по поръчка.">
   <meta property="og:url" content="https://kamentuplovdiv-stack.github.io/numeviasoft/"><meta property="og:image" content="https://kamentuplovdiv-stack.github.io/numeviasoft/visuals/numevia-studio-share.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="/numeviasoft/visuals/numevia-favicon.png">
   <link rel="preload" href="/numeviasoft/fonts/inter.woff2" as="font" type="font/woff2" crossorigin>
-
+  <link rel="stylesheet" href="/numeviasoft/bug-game.css">
   <link rel="stylesheet" href="/numeviasoft/style.css?v=studio7">
   <noscript><link rel="stylesheet" href="/numeviasoft/noscript.css"></noscript>
   <script defer src="/numeviasoft/app.js?v=studio6"></script>
+<script defer src="/numeviasoft/bug-game.js?v=studio6"></script>
 </head>
 <body data-page="index">
 <a class="skip" href="#main">Към съдържанието</a>
 <header class="head" id="top"><div class="wrap head-inner">
-  <a class="logo" href="/numeviasoft/" aria-label="Numevia — начало"><img src="/numeviasoft/visuals/numevia-logo.png?v=original-447" width="447" height="268" alt="Numevia"></a>
+  <div class="studio-signature"><a class="logo" href="/numeviasoft/" aria-label="Numevia — начало"><img src="/numeviasoft/visuals/numevia-logo.png?v=original-447" width="447" height="268" alt="Numevia"></a><button class="bug-launch" type="button" id="bug-launch" hidden aria-label="Хвани бъга — игра за 15 секунди" aria-haspopup="dialog" aria-controls="bug-game">
+  <img src="/numeviasoft/icons/studio-bug.svg" alt="" width="31" height="33">
+  <span aria-hidden="true">Хвани бъга</span>
+</button></div>
   <button class="menu" type="button" aria-controls="navigation" aria-expanded="false">Меню <i></i></button>
-  <nav id="navigation" aria-label="Основна навигация"><a href="/numeviasoft/products.html" data-nav="products">Приложения</a><a href="/numeviasoft/#services" data-nav="services">За фирми</a><a href="/numeviasoft/studio.html" data-nav="studio">Студиото</a><a class="mobile-contact" href="/numeviasoft/#contact">Контакти</a></nav>
+  <nav id="navigation" aria-label="Основна навигация"><a href="/numeviasoft/products.html" data-nav="products">Приложения</a><a href="/numeviasoft/#services" data-nav="services">За фирми</a><a href="/numeviasoft/studio.html" data-nav="studio">За компанията</a><a class="mobile-contact" href="/numeviasoft/#contact">Контакти</a></nav>
   <a class="button head-cta" href="/numeviasoft/#contact">Обсъди проект <i class="arr ne"></i></a>
 </div></header>
 <main id="main"><section class="wrap hero" id="home" aria-labelledby="home-title">
   <div class="hero-copy">
-    <p class="kicker">Numevia <span>/</span> Софтуерно студио</p>
-    <h1 id="home-title">Софтуер за<br>учене и <em>работа.</em></h1>
-    <p class="lead">Казвам се Камен Паунов. В Пловдив разработвам мобилни приложения и софтуер по задание за фирми — за задачи като обработка на данни, проследяване на поръчки и отчети по смени.</p>
+    <p class="kicker">Numevia <span>·</span> Софтуерна компания</p>
+    <h1 id="home-title">А за това<br>има ли <em>бутон?</em></h1>
+    <p class="lead">Даже два. Единият отваря нашите приложения. С другия можеш да довършиш изречението „Ех, ако имаше програма за…“</p>
     <div class="actions" id="product">
       <a class="button" href="/numeviasoft/products.html">Приложения <i class="arr" aria-hidden="true"></i></a>
-      <a class="textlink" href="#services">Софтуер по задание <i class="arr se" aria-hidden="true"></i></a>
+      <a class="textlink" href="#contact" data-topic="custom">Имам идея <i class="arr se" aria-hidden="true"></i></a>
     </div>
   </div>
   <img class="studio-photo" src="/numeviasoft/visuals/studio-workspace.webp" width="1400" height="1050" alt="Скици на мобилно приложение в тетрадка до екран с работна справка." fetchpriority="high">
 </section>
-<section class="tint" id="services"><div class="wrap split section"><div><p class="kicker">За фирми</p><h2>Софтуер <em>по задание.</em></h2><p class="lead">Покажи ми как изпълняваш една задача днес. Ще уточним кои стъпки може да поеме програмата и как да проверим резултата.</p></div>
+<section class="tint" id="services"><div class="wrap split section"><div><p class="kicker">За фирми</p><h2>Софтуер <em>по задание.</em></h2><p class="lead">Покажи ни как изпълняваш една задача днес. Ще уточним кои стъпки може да поеме програмата и как да проверим резултата.</p></div>
   <div class="rows">
     <details open><summary><img src="/numeviasoft/icons/code.svg" width="26" height="26" alt="">Програми за вътрешна работа<i class="plus"></i></summary><div><p>Регистър на заявки, работни карти или проследяване на поръчки. Полетата и справките следват начина, по който работи твоят екип.</p><a class="textlink" data-topic="custom" href="#contact">Обсъди такава програма <i class="arr ne"></i></a></div></details>
     <details><summary><img src="/numeviasoft/icons/calculator.svg" width="26" height="26" alt="">Инженерни калкулатори<i class="plus"></i></summary><div><p>Превръщаме формула или таблица в инструмент с ясни единици, гранични стойности и контролен пример.</p><a class="textlink" data-topic="engineering" href="#contact">Обсъди калкулатор <i class="arr ne"></i></a></div></details>
     <details><summary><img src="/numeviasoft/icons/factory.svg" width="26" height="26" alt="">Производствени отчети<i class="plus"></i></summary><div><p>Въвеждане на количества, операции и отклонения по смени. Получаваш справка по изделие, период или работно място.</p><a class="textlink" data-topic="production" href="#contact">Обсъди отчет <i class="arr ne"></i></a></div></details>
     <details><summary><img src="/numeviasoft/icons/automation.svg" width="26" height="26" alt="">Обработка на данни<i class="plus"></i></summary><div><p>Обединяване на еднотипни таблици, откриване на липсващи стойности и подготовка на данните за следващата справка.</p><a class="textlink" data-topic="automation" href="#contact">Обсъди автоматизация <i class="arr ne"></i></a></div></details>
     <details><summary><img src="/numeviasoft/icons/prototype.svg" width="26" height="26" alt="">Прототипи и поддръжка<i class="plus"></i></summary><div><p>Изпробваш основната операция с примерни данни. По обратната връзка уточняваме следващите функции и нужната поддръжка.</p><a class="textlink" data-topic="prototype" href="#contact">Обсъди прототип <i class="arr ne"></i></a></div></details></div></div></section>
-<section class="wrap about section" id="about"><p class="kicker">За студиото</p><div><h2>Кой стои зад <em>Numevia?</em></h2><p class="lead">Аз съм Камен Паунов. Идеите ми за софтуер често идват от работа с таблици, чертежи и производствени отчети. Когато правя програма за конкретна задача, първо я проверявам с пример от практиката.</p><a class="textlink" href="/numeviasoft/studio.html">Повече за студиото <i class="arr"></i></a></div></section><section class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap contact-layout">
+<section class="wrap about section" id="about"><p class="kicker">За компанията</p><div><h2>Кой стои зад <em>Numevia?</em></h2><p class="lead">Аз съм Камен Паунов. Идеите ми за софтуер често идват от работа с таблици, чертежи и производствени отчети. Когато правя програма за конкретна задача, първо я проверявам с пример от практиката.</p><a class="textlink" href="/numeviasoft/studio.html">Повече за Numevia <i class="arr"></i></a></div></section><section class="contact" id="contact" aria-labelledby="contact-title"><div class="wrap contact-layout">
   <div><p class="kicker light">Контакти</p><h2 id="contact-title">Какво искаш<br>да <em>улесниш?</em></h2><p class="contact-copy">Опиши задачата или се свържи директно с инж. Камен Паунов.</p>
     <address><a href="tel:+359888010266"><img src="/numeviasoft/icons/phone.svg" width="22" height="22" alt="">0888 010 266</a><a href="mailto:kamentuplovdiv@gmail.com"><img src="/numeviasoft/icons/mail.svg" width="22" height="22" alt="">kamentuplovdiv@gmail.com</a><a href="https://www.google.com/maps/dir/?api=1&amp;destination=ул.+Скопие+98,+Пловдив,+България"><img src="/numeviasoft/icons/pin.svg" width="22" height="22" alt=""><span>ул. „Скопие“ № 98, Пловдив<small>Адрес за посетители · Отвори маршрут ↗</small></span></a></address>
   </div>
@@ -52,6 +56,26 @@
     <p id="brief-error" role="alert" hidden></p><button class="button" type="submit">Подготви имейл <i class="arr"></i></button><small id="brief-help">Ще можеш да прегледаш черновата и да я изпратиш от своята поща.</small>
     <div id="brief-result" hidden><h4 id="draft-title" tabindex="-1">Чернова на запитването</h4><label for="prepared">Текст на имейла</label><textarea id="prepared" readonly rows="4"></textarea><div class="actions"><a id="send-mail" class="button" href="mailto:kamentuplovdiv@gmail.com">Отвори в пощата <i class="arr ne"></i></a><button type="button" class="textlink" id="copy">Копирай текста</button></div><span role="status" id="copy-status"></span></div>
   </form></div></section>
+<dialog class="bug-game" id="bug-game" aria-labelledby="bug-title" aria-describedby="bug-help">
+  <div class="bug-heading">
+    <h2 id="bug-title">Хвани <em>бъга!</em></h2>
+    <button class="bug-close" type="button" aria-label="Затвори играта">×</button>
+  </div>
+  <p id="bug-help">Хващай бръмбарчето с докосване или с клавиша Enter. Имаш 15 секунди.</p>
+  <div class="bug-stats">
+    <span>Уловени <b id="bug-score">0</b></span>
+    <span>Остават <b id="bug-time">15 сек.</b></span>
+  </div>
+  <div class="bug-arena">
+    <button class="bug-target" type="button" aria-label="Хвани бръмбарчето">
+      <img src="/numeviasoft/icons/studio-bug.svg" alt="" width="45" height="48">
+    </button>
+    <div class="bug-finish" hidden>
+      <p id="bug-result" role="status"></p>
+      <button class="button" id="bug-replay" type="button">Играй пак <span aria-hidden="true">↻</span></button>
+    </div>
+  </div>
+</dialog>
 </main>
 <footer class="foot"><div class="wrap foot-inner"><a class="logo" href="/numeviasoft/" aria-label="Numevia — начало"><img src="/numeviasoft/visuals/numevia-logo.png?v=original-447" width="447" height="268" alt="Numevia"></a><p>© 2026 Numevia · Пловдив, България</p><a class="textlink" href="#top">Нагоре ↑</a></div></footer>
 </body></html>
