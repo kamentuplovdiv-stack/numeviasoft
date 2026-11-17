@@ -318,3 +318,47 @@ address a:hover { color: #ffc698; }
   .button,.textlink,.robot-link,summary { transition: background-color .16s, border-color .16s, color .16s; }
 }
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+
+/* Homepage: show our software identity first, keep the familiar palette. */
+body[data-page="index"] .hero h1 {
+  font-size: clamp(2.8rem, 4.6vw, 4.75rem);
+  line-height: 1.045;
+  letter-spacing: -.058em;
+  max-width: 700px;
+}
+body[data-page="index"] .hero .lead { max-width: 550px; }
+.software-signals {
+  display: flex; flex-wrap: wrap; gap: 7px 9px;
+  margin-top: 23px;
+}
+.software-signals a {
+  display: inline-flex; align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 6px 11px;
+  font-size: .72rem; font-weight: 620;
+  line-height: 1.4; color: var(--ink);
+  background: var(--white);
+}
+.software-signals a:hover, .software-signals a:focus-visible {
+  border-color: var(--accent); color: var(--accent);
+}
+.hero-aside {
+  margin-top: 19px;
+  font-size: .8rem;
+  line-height: 1.55;
+  font-weight: 690;
+  color: var(--ink);
+}
+.hero-aside span { color: var(--muted); font-weight: 440; }
+@media (max-width: 660px) {
+  body[data-page="index"] .hero h1 {
+    font-size: clamp(2.55rem, 9vw, 3.45rem);
+    line-height: 1.04;
+    margin-top: 18px;
+    margin-bottom: 16px;
+  }
+  .software-signals { margin-top: 20px; }
+  .software-signals a { font-size: .7rem; }
+}
