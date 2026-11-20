@@ -49,6 +49,8 @@
     error.hidden = true;
     message.removeAttribute('aria-invalid');
   }
+  const requestedTopic = new URLSearchParams(location.search).get('topic');
+  if ([...topic.options].some(option => option.value === requestedTopic)) topic.value = requestedTopic;
   form.noValidate = true;
   form.addEventListener('input', resetDraft);
   document.querySelectorAll('[data-topic]').forEach(link => link.addEventListener('click', () => {

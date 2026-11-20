@@ -54,3 +54,9 @@ The 3 HTML pages and 84 local asset/navigation/fragment references resolve insid
 ### Contacts and icon family — 2026-11-04
 Published contact details supplied by the owner: Plovdiv, Skopie 98 (visitors), +359888010266, kamentuplovdiv@gmail.com. The form prepares a mailto draft; the visitor sends it in their own email client. No backend delivery or automatic success claim.
 30 original line icons are in `visuals/icons/`. A new EngineerOne icon and downloadable Google Play PNG/ZIP are in `brand-assets/`. The Android app/Play Console have not been modified.
+
+
+## Company and product refresh — 2026-11-20
+Numevia is presented as an operating software company and CalculatorEngineerOne as its Android product. Product naming, company copy and contact links are consistent across the main pages. The existing design, interactive models and bug game are preserved. Historical V141 audit copy was removed from marketing pages. Prices remain 0 €, 1.99 €/month and 9.99 € for lifetime access; current availability is handled through product enquiries, with no checkout or unverified Play listing link.
+
+Local asset and navigation paths are relative so the same static files serve from the GitHub Pages project path and the Sites root. The privacy policy's build-specific technical disclosures are retained. Earlier validation notes above describe their dated versions, not a fresh Android audit.

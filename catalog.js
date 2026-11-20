@@ -9,7 +9,7 @@
     card.className = 'module';
     const summary = document.createElement('summary');
     const icon = document.createElement('img');
-    icon.src = '/numeviasoft/icons/' + module.icon + '.svg';
+    icon.src = './icons/' + module.icon + '.svg';
     icon.width = 25;
     icon.height = 25;
     icon.alt = '';

@@ -1,5 +1,5 @@
 @font-face {
-  font-family: Inter; src: url("/numeviasoft/fonts/inter.woff2") format("woff2");
+  font-family: Inter; src: url("./fonts/inter.woff2") format("woff2");
   font-weight: 100 900; font-style: normal; font-display: swap;
 }
 :root {
@@ -411,3 +411,14 @@ body[data-page="index"] .hero-visual-detail {
   body[data-page="index"] .hero-visual-overline { font-size: .59rem; }
   body[data-page="index"] .hero-visual-detail { font-size: .62rem; }
 }
+
+/* Product naming and access links shared by both hosting addresses. */
+.product-name { overflow-wrap: anywhere; }
+.card-info h2 { overflow-wrap: anywhere; font-size: clamp(2rem, 3.3vw, 3.5rem); }
+.product-intro .sub-grid .product-name { font-size: clamp(2.5rem, 4.5vw, 4.8rem); }
+.access-contact { margin-top: 28px; }
+.access-note { margin-top: 14px; max-width: 760px; color: var(--muted); font-size: .875rem; }
+.kicker, .product-meta { font-size: .875rem; }
+
+.hero > *, .sub-grid > * { min-width: 0; }
+.kicker, .crumb { flex-wrap: wrap; }
